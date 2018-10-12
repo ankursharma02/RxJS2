@@ -1,0 +1,32 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+  
+    <button>Click me</button>
+
+    </body>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.3.0/dist/global/Rx.js"></script>
+    <script>
+   // var count = 0;
+   var button = document.querySelector('button');
+//button.addEventListener('click', () => console.log(`Clicked ${++count} times`));
+// var count = 0;
+// var rate = 1000;
+// var lastClick = Date.now() - rate;
+// var button = document.querySelector('button');
+// button.addEventListener('click', () => {
+//   if (Date.now() - lastClick >= rate) {
+//     console.log(`Clicked ${++count} times`);
+//     lastClick = Date.now();
+//   }
+// });
+    Rx.Observable.fromEvent(button,'click')
+    .throttleTime(1000)
+    .subscribe(
+        (event)=>console.log('Clicked')
+    );
+
+    </script>
+</html>

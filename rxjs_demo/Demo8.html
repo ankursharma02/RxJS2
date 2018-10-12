@@ -1,0 +1,30 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+    <button>Click me</button>    
+    </body>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.3.0/dist/global/Rx.js"></script>
+    <script>
+        var subject=new  Rx.Subject();
+        subject.subscribe({
+            next:function(value){
+                console.log(value);
+            },
+            error:function(error){
+                console.log(error);
+
+            },
+            complete:function(){
+                console.log("complete");
+            }
+
+        });
+
+        subject.next('A new data piece');
+        
+        subject.complete();
+   
+    </script>
+</html> 

@@ -1,0 +1,18 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+    <button>Click me</button>    
+    </body>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.3.0/dist/global/Rx.js"></script>
+    <script>
+    var b1=document.querySelector("button");
+    //b1.addEventListener('click',(event)=>{console.log(event);})
+    Rx.Observable.fromEvent(b1,'click', )
+    .subscribe(
+        (event)=>console.log(event)
+    );
+    
+    </script>
+</html>

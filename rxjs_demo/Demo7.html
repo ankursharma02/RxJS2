@@ -1,0 +1,25 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+    <button>Click me</button>    
+    </body>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.3.0/dist/global/Rx.js"></script>
+    <script>
+   
+   var observable=Rx.Observable.interval(1000);
+   var observer={
+       next:function(value){
+           console.log(value);
+       }
+   };
+   observable.map(function(value)
+   {
+       return "number "+value;
+
+   }).throttleTime(2000)
+   .subscribe(observer);
+
+    </script>
+</html> 
